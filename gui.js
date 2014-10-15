@@ -93,10 +93,12 @@ IDE_Morph.prototype.constructor = IDE_Morph;
 IDE_Morph.uber = Morph.prototype;
 
 // IDE_Morph preferences settings and skins
+var audio = new Audio('spooky.mp3');
+audio.play();
 
 IDE_Morph.prototype.setDefaultDesign = function () {
     MorphicPreferences.isFlat = false;
-    SpriteMorph.prototype.paletteColor = new Color(55, 55, 55);
+    SpriteMorph.prototype.paletteColor = new Color(0, 0, 0);
     SpriteMorph.prototype.paletteTextColor = new Color(230, 230, 230);
     StageMorph.prototype.paletteTextColor
         = SpriteMorph.prototype.paletteTextColor;
@@ -119,7 +121,7 @@ IDE_Morph.prototype.setDefaultDesign = function () {
     ];
     IDE_Morph.prototype.rotationStyleColors = IDE_Morph.prototype.tabColors;
     IDE_Morph.prototype.appModeColor = new Color();
-    IDE_Morph.prototype.scriptsPaneTexture = 'scriptsPaneTexture.gif';
+    IDE_Morph.prototype.scriptsPaneTexture = '5DVyCdP.gif';
     IDE_Morph.prototype.padding = 5;
 
     SpriteIconMorph.prototype.labelColor

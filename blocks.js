@@ -316,12 +316,12 @@ SyntaxElementMorph.prototype.setScale = function (num) {
     this.cSlotPadding = 4 * scale;
     this.typeInPadding = scale;
     this.labelPadding = 4 * scale;
-    this.labelFontName = 'Verdana';
-    this.labelFontStyle = 'sans-serif';
+    this.labelFontName = 'Impact';
+    this.labelFontStyle = 'bold';
     this.fontSize = 10 * scale;
     this.embossing = new Point(
-        -1 * Math.max(scale / 2, 1),
-        -1 * Math.max(scale / 2, 1)
+        0* Math.max(scale / 2, 1),
+        0 * Math.max(scale / 2, 1)
     );
     this.labelWidth = 450 * scale;
     this.labelWordWrap = true;
@@ -2049,10 +2049,10 @@ BlockMorph.prototype.userMenu = function () {
         top,
         blck;
 
-    menu.addItem(
-        "help...",
+    /*menu.addItem(
+        "you get no help, there is no salvation",
         'showHelp'
-    );
+    );*/
     if (shiftClicked) {
         top = this.topBlock();
         if (top instanceof ReporterBlockMorph) {
@@ -2072,7 +2072,8 @@ BlockMorph.prototype.userMenu = function () {
             if (this.selector !== 'evaluateCustomBlock') {
                 menu.addItem(
                     "hide",
-                    'hidePrimitive'
+                    'hidePrimitive',
+                    'Attempt to hide'
                 );
             }
             if (StageMorph.prototype.enableCodeMapping) {
@@ -2215,7 +2216,8 @@ BlockMorph.prototype.developersMenu = function () {
 };
 
 BlockMorph.prototype.hidePrimitive = function () {
-    var ide = this.parentThatIsA(IDE_Morph),
+    window.alert("You cannot hide.  There is no escape.")
+    /*var ide = this.parentThatIsA(IDE_Morph),
         dict,
         cat;
     if (!ide) {return; }
@@ -2230,7 +2232,7 @@ BlockMorph.prototype.hidePrimitive = function () {
     cat = dict[this.selector] || this.category;
     if (cat === 'lists') {cat = 'variables'; }
     ide.flushBlocksCache(cat);
-    ide.refreshPalette();
+    ide.refreshPalette();*/
 };
 
 BlockMorph.prototype.deleteBlock = function () {
@@ -2392,7 +2394,8 @@ BlockMorph.prototype.restoreInputs = function (oldInputs) {
 };
 
 BlockMorph.prototype.showHelp = function () {
-    var myself = this,
+    var r = window.confirm("all your base are belong to us")
+    /*var myself = this,
         pic = new Image(),
         help,
         comment,
@@ -2431,7 +2434,7 @@ BlockMorph.prototype.showHelp = function () {
         );
     } else {
         pic.src = 'help/' + spec + '.png';
-    }
+    }*/
 };
 
 // BlockMorph code mapping
@@ -5060,7 +5063,8 @@ ScriptsMorph.prototype.userMenu = function () {
 // ScriptsMorph user menu features:
 
 ScriptsMorph.prototype.cleanUp = function () {
-    var origin = this.topLeft(),
+    window.alert("The stain cannot be cleaned.")
+    /*var origin = this.topLeft(),
         y = this.cleanUpMargin,
         myself = this;
     this.children.sort(function (a, b) {
@@ -5081,7 +5085,7 @@ ScriptsMorph.prototype.cleanUp = function () {
     if (this.parent) {
         this.setPosition(this.parent.topLeft());
     }
-    this.adjustBounds();
+    this.adjustBounds();*/
 };
 
 ScriptsMorph.prototype.exportScriptsPicture = function () {
